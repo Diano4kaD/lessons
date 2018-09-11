@@ -20,12 +20,14 @@ fun main(args: Array<String>) {
             "DEPOSIT" -> billing.addOperation(Deposit(args[1], BigDecimal(args[2])))
             "BALANCE" -> billing.getUserBalance(args[1])
             "SHOP_INFO" -> billing.getShopIdOperations(args[1])
+            "P2P" -> {billing.addOperation(P2p(args[1], BigDecimal(args[2]), args[3]))
+                billing.addOperation(Deposit(args[3], BigDecimal(args[2])))}
             else -> throw IllegalArgumentException("Unknown command")
         }
     } catch (e: Throwable) {
         e.printStackTrace()
         println(USAGE_MESSAGE)
-    }
+}
 }
 
 private fun Array<String>.command(): String = this[0].toUpperCase()

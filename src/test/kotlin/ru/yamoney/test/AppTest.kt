@@ -11,16 +11,21 @@ class AppTest {
 
     @Test
     fun deposit() {
-        main(arrayOf("deposit", "Вася", "123", "4454"))
+        main(arrayOf("deposit", "Вася", "123"))
     }
 
     @Test
     fun balance() {
-        main(arrayOf("balance", "Вася"))
+        main(arrayOf("balance", "Петя"))
     }
 
     @Test
     fun shopInfo() {
         main(arrayOf("shop_info", "4454"))
+    }
+
+    @Test
+    fun p2p() {
+        main(arrayOf("p2p", "Вася", "23", "Петя"))
     }
 }
